@@ -10,6 +10,7 @@ services:
       - TZ=${TZ}
     volumes:
       - /portainer/Files/AppData/Config/Nextcloud/Config:/config
+      - /portainer/AppData/Data:/data
     ports:
       - ${PORT}:443
     restart: unless-stopped
