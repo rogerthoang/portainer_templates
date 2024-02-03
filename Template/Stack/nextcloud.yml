@@ -10,7 +10,7 @@ services:
       - TZ=${TZ}
     volumes:
       - /portainer/Files/AppData/Config/Nextcloud/Config:/config
-      - /portainer/AppData/Data:/data
+      - /portainer/Files/AppData/Config/Nextcloud/Data:/data
     ports:
       - ${PORT}:443
     restart: unless-stopped
@@ -29,7 +29,7 @@ services:
       - MYSQL_PASSWORD=${DATABASE_PASSWORD}
     volumes:
       - /portainer/AppData/Config/Nextcloud/DB:/config
-      - /portainer/AppData/Data:/data
+      - /portainer/Files/AppData/Config/Nextcloud/Data:/data
     ports:
       - 3306:3306
     restart: unless-stopped
