@@ -28,6 +28,7 @@ services:
       - MYSQL_PASSWORD=${DATABASE_PASSWORD}
     volumes:
       - /portainer/AppData/Config/Nextcloud/DB:/config
+      - /portainer/AppData/Data:/data
     ports:
       - 3306:3306
     restart: unless-stopped
