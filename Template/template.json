@@ -1,6 +1,44 @@
 {
   "version": "2",
   "templates": [
+        {
+      "categories": [
+        "Other"
+      ],
+      "description": "A modern, fully static, fast, secure fully proxied, highly customizable application dashboard with integrations for over 100 services and translations into multiple languages. Easily configured via YAML files or through docker label discovery.",
+      "env": [
+        {
+          "default": "1000",
+          "label": "PUID",
+          "name": "PUID"
+        },
+        {
+          "default": "100",
+          "label": "PGID",
+          "name": "PGID"
+        }
+      ],
+      "image": "ghcr.io/gethomepage/homepage:latest",
+      "logo": "https://github.com/gethomepage/homepage/blob/main/images/banner_light%402x.png",
+      "name": "homepage",
+      "platform": "linux",
+      "ports": [
+        "3000:3000/tcp"
+      ],
+      "restart_policy": "unless-stopped",
+      "title": "homepage",
+      "type": 1,
+      "volumes": [
+        {
+          "bind": "/var/run/docker.sock",
+          "container": "/var/run/docker.sock:/var/run/docker.sock:ro"
+        },
+        {
+          "bind": "/portainer/Files/AppData/Homepage/Conf",
+          "container": "/opt/adguardhome/conf"
+        }
+      ]
+    },
     {
       "categories": [
         "Other"
